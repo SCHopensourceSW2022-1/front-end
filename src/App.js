@@ -7,6 +7,7 @@ import MainLayout from './Components/MainLayout/MainLayout';
 import MainPage from './Pages/Main/Main';
 import AcademicClubPage from './Pages/AcademicClub/AcademicClub';
 import CenterClubPage from './Pages/CenterClub/CenterClub';
+import UploadArticlePage from './Pages/UploadArticle/UploadArticle';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
 
 const queryClient = new QueryClient();
@@ -30,6 +31,12 @@ function App() {
           <Route
             path="/centerclub"
             element={<MainLayout View={CenterClubPage} Menu={'CenterClub'} />}
+          />
+          <Route
+            path="/uploadarticle"
+            element={
+              <MainLayout View={UploadArticlePage} Menu={'UploadArticle'} />
+            }
           />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
