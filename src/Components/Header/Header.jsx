@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 
 /* import css */
-import './Header.css';
+import '../../Styles/Header.css';
 
 function Header() {
   return (

@@ -7,10 +7,10 @@ import { CardActionArea } from '@mui/material';
 import Grid from '@mui/material/Grid';
 
 /* import css */
-import './Main.css';
+import '../../Styles/ViewStyles.css';
 
-const RenderContents = () => {
-  const [contentsData, setContentsData] = useState([
+const RenderAllContents = () => {
+  const [allContentsData, setAllContentsData] = useState([
     {
       id: 1,
       img: '/Assets/test.jpg',
@@ -87,7 +87,7 @@ const RenderContents = () => {
 
   return (
     <Grid container spacing={2} className="contents-grid">
-      {contentsData.map((item) => {
+      {allContentsData.map((item) => {
         return (
           <Grid item lg={3} key={item.id}>
             <Card>
@@ -117,7 +117,7 @@ const RenderContents = () => {
 
 /* main function */
 function Main() {
-  return <RenderContents />;
+  return <RenderAllContents />;
 }
 
 export default Main;

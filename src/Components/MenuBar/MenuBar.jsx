@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 /* import css */
-import './MenuBar.css';
+import '../../Styles/MenuBar.css';
 
 function MenuBar(props) {
   const { Menu } = props;
