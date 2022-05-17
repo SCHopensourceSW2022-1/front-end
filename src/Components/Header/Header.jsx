@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 
 /* import css */
@@ -16,7 +17,9 @@ function Header() {
         />
         <SearchIcon />
       </div>
-      <div className="write-btn">글 쓰기</div>
+      <div className="write-btn">
+        <Link to="/uploadarticle">글 쓰기</Link>
+      </div>
     </div>
   );
 }

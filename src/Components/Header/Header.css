@@ -25,3 +25,7 @@
 .write-btn {
   margin: auto 30px auto 0;
 }
+.write-btn a {
+  text-decoration: none;
+  color: black;
+}
