@@ -11,7 +11,7 @@ function MainLayout(props) {
   const { View, Menu } = props;
   return (
     <div className="layout-wrapper">
-      <Header />
+      <Header Menu={Menu} />
       <MenuBar Menu={Menu} />
       <div className="layout-view">
         <View {...props} />

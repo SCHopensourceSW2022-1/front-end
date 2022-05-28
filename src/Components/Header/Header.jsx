@@ -5,10 +5,11 @@ import SearchIcon from '@mui/icons-material/Search';
 /* import css */
 import '../../Styles/Header.css';
 
-function Header() {
+function Header(props) {
+  const { Menu } = props;
   return (
     <div className="header">
-      <div className="header-logo">Logo</div>
+      <Link to="/" className="header-logo">Logo</Link>
       <div className="search-bar">
         <input
           className="search-input"
@@ -18,7 +19,12 @@ function Header() {
         <SearchIcon />
       </div>
       <div className="write-btn">
-        <Link to="/uploadarticle">글 쓰기</Link>
+        <Link
+          to="/uploadarticle"
+          className={Menu === 'UploadArticle' ? 'selected' : 'not-selected'}
+        >
+          글 쓰기
+        </Link>
       </div>
     </div>
   );

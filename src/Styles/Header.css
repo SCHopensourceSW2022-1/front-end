@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+  color: black;
+}
 .header {
   display: flex;
   width: 100%;
@@ -26,6 +30,17 @@
   margin: auto 30px auto 0;
 }
 .write-btn a {
-  text-decoration: none;
-  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+  margin: 0 10px;
+}
+.selected {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+.not-selected {
+  background-color: none;
 }
