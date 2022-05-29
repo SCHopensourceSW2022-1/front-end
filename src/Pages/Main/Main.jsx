@@ -66,19 +66,19 @@ const RenderAllContents = () => {
       description: '동아리 설명',
     },
     {
-      id: 7,
+      id: 10,
       img: '/Assets/test.jpg',
       title: '동아리명10',
       description: '동아리 설명',
     },
     {
-      id: 8,
+      id: 11,
       img: '/Assets/test.jpg',
       title: '동아리명11',
       description: '동아리 설명',
     },
     {
-      id: 9,
+      id: 12,
       img: '/Assets/test.jpg',
       title: '동아리명12',
       description: '동아리 설명',
