@@ -1,0 +1,96 @@
+.Modal {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.Club-Main {
+  width: 80vmin;
+  display: inline-block;
+  /* 배경색으로 디자인 확인 
+      background-color: yellow;*/
+}
+
+.Club-Img {
+  float: left;
+  margin: 5px 5px 5px 0;
+  width: 30vmin; /*25 => 30*/
+  height: 35vmin; /*30 => 35*/
+  text-align: left;
+  /* 배경색으로 디자인 확인 
+      background-color: red;*/
+  padding: 0px;
+}
+
+.Club-logo {
+  width: 30vmin; /*25 => 30*/
+  height: 35vmin; /*30 => 35*/
+  pointer-events: none;
+}
+
+.Club-script {
+  float: right;
+  width: 45vmin;
+  height: 35vmin;
+  margin: 5px 5px 0 5px;
+  font-size: 2vmin; /*14px;*/
+  padding-left: 10px;
+  /* 배경색으로 디자인 확인 
+      background-color: gray;*/
+  text-align: left;
+}
+
+.Club-script-detail {
+  width: 80vmin;
+  text-align: left;
+  font-size: 2vmin; /*14px;*/
+  /* 배경색으로 디자인 확인 
+      background-color: skyblue;*/
+}
+
+.club-page__filter__item {
+  margin-right: 1vmin; /*10px;*/
+  margin-bottom: 1vmin; /*10px;*/
+  display: inline-block;
+  text-align: center;
+  font-size: 2vmin; /*14px;*/
+  line-height: 5vmin; /*40px;*/
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-radius: 25px;
+  background-color: #f7f8fa;
+  transition: background-color 0.25s;
+  /* 클릭 커서 */
+  /*cursor: pointer;*/
+}
+
+.FontHeader {
+  font-weight: bold;
+  border-bottom: 1px solid #282c34;
+}
+
+.Font {
+  font-weight: bold;
+}
+
+.ClubInform {
+  padding: 0 1.3vmin 1.3vmin 1.3vmin; /*padding: 0 15px 15px 10px;*/
+  font-size: 1.2vmin; /*13px;*/
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
