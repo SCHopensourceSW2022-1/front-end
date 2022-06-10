@@ -1,96 +1,97 @@
-.Modal {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.Club-Main {
-  width: 80vmin;
-  display: inline-block;
-  /* 배경색으로 디자인 확인 
-      background-color: yellow;*/
-}
-
-.Club-Img {
-  float: left;
-  margin: 5px 5px 5px 0;
-  width: 30vmin; /*25 => 30*/
-  height: 35vmin; /*30 => 35*/
-  text-align: left;
-  /* 배경색으로 디자인 확인 
-      background-color: red;*/
-  padding: 0px;
-}
-
-.Club-logo {
-  width: 30vmin; /*25 => 30*/
-  height: 35vmin; /*30 => 35*/
-  pointer-events: none;
-}
-
-.Club-script {
-  float: right;
-  width: 45vmin;
-  height: 35vmin;
-  margin: 5px 5px 0 5px;
-  font-size: 2vmin; /*14px;*/
-  padding-left: 10px;
-  /* 배경색으로 디자인 확인 
-      background-color: gray;*/
-  text-align: left;
-}
-
-.Club-script-detail {
-  width: 80vmin;
-  text-align: left;
-  font-size: 2vmin; /*14px;*/
-  /* 배경색으로 디자인 확인 
-      background-color: skyblue;*/
-}
-
-.club-page__filter__item {
-  margin-right: 1vmin; /*10px;*/
-  margin-bottom: 1vmin; /*10px;*/
-  display: inline-block;
-  text-align: center;
-  font-size: 2vmin; /*14px;*/
-  line-height: 5vmin; /*40px;*/
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 0 20px;
-  box-sizing: border-box;
-  border-radius: 25px;
-  background-color: #f7f8fa;
-  transition: background-color 0.25s;
-  /* 클릭 커서 */
-  /*cursor: pointer;*/
-}
-
-.FontHeader {
-  font-weight: bold;
-  border-bottom: 1px solid #282c34;
-}
-
-.Font {
-  font-weight: bold;
-}
-
-.ClubInform {
-  padding: 0 1.3vmin 1.3vmin 1.3vmin; /*padding: 0 15px 15px 10px;*/
-  font-size: 1.2vmin; /*13px;*/
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.modal-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  animation: modal-show 1s;
+}
+.modal-container.close {
+  animation: modal-hide 1s;
+}
+.modal-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal-contents {
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 2px;
+}
+
+.club-title-box {
+  position: relative;
+  padding: 16px 64px 16px 16px;
+  background-color: #f1f1f1;
+  font-weight: 700;
+  text-align: center;
+}
+.club-info-box {
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid rgb(179, 177, 177);
+  border-top: 1px solid rgb(179, 177, 177);
+}
+.club-img-box {
+  width: 300px;
+  height: 250px;
+}
+.club-img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.club-details {
+  /* margin: auto 10px auto auto; */
+  margin: auto;
+}
+.club-detail-title-font {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.detail-box {
+  padding: 5px;
+}
+.club-descript {
+  padding: 15px;
+}
+
+.modal-close-btn {
+  display: block;
+  width: 50px;
+  padding: 5px;
+  margin: 10px auto;
+  font-size: 16px;
+}
+@keyframes modal-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes modal-hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
