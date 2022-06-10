@@ -6,11 +6,15 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Grid from '@mui/material/Grid';
 
+import useModal from '../../Components/Modal/useModal';
+import ModalForm from '../../Components/Modal/ModalForm';
+
 /* import css */
 import '../../Styles/ViewStyles.css';
 
 const RenderAcademicContents = () => {
-  const [academicContentsData, setAcademicContentsData] = useState([
+  const [modalOption, showModal] = useModal();
+  const [academicClubData, setAcademicClubData] = useState([
     {
       id: 1,
       img: '/Assets/test.jpg',
@@ -61,12 +65,16 @@ const RenderAcademicContents = () => {
     },
   ]);
 
+  const openModal = () => {
+    showModal(true, null, null);
+  };
+
   return (
     <Grid container spacing={2} className="contents-grid">
-      {academicContentsData.map((item) => {
+      {academicClubData.map((item) => {
         return (
           <Grid item lg={3} key={item.id}>
-            <Card>
+            <Card onClick={openModal}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -84,6 +92,10 @@ const RenderAcademicContents = () => {
                 </CardContent>
               </CardActionArea>
             </Card>
+            <ModalForm
+              ContentData={academicClubData}
+              modalOption={modalOption}
+            />
           </Grid>
         );
       })}

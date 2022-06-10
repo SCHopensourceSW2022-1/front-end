@@ -6,11 +6,15 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Grid from '@mui/material/Grid';
 
+import useModal from '../../Components/Modal/useModal';
+import ModalForm from '../../Components/Modal/ModalForm';
+
 /* import css */
 import '../../Styles/ViewStyles.css';
 
 const RenderCenterContents = () => {
-  const [centerContentsData, setCenterContentsData] = useState([
+  const [modalOption, showModal] = useModal();
+  const [centerClubData, setCenterClubData] = useState([
     {
       id: 1,
       img: '/Assets/test.jpg',
@@ -61,12 +65,16 @@ const RenderCenterContents = () => {
     },
   ]);
 
+  const openModal = () => {
+    showModal(true, null, null);
+  };
+
   return (
     <Grid container spacing={2} className="contents-grid">
-      {centerContentsData.map((item) => {
+      {centerClubData.map((item) => {
         return (
           <Grid item lg={3} key={item.id}>
-            <Card>
+            <Card onClick={openModal}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -84,6 +92,7 @@ const RenderCenterContents = () => {
                 </CardContent>
               </CardActionArea>
             </Card>
+            <ModalForm ContentData={centerClubData} modalOption={modalOption} />
           </Grid>
         );
       })}
