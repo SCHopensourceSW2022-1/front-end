@@ -12,9 +12,6 @@
   align-items: center;
   animation: modal-show 1s;
 }
-.modal-container.close {
-  animation: modal-hide 1s;
-}
 .modal-background {
   position: fixed;
   width: 100%;
@@ -85,13 +82,5 @@
   }
   100% {
     opacity: 1;
-  }
-}
-@keyframes modal-hide {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
