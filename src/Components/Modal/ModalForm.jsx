@@ -6,6 +6,18 @@ import '../../Styles/ModalForm.css';
 function ModalForm(props) {
   const { ContentData, modalOption } = props;
 
+  /* ESC로 모달 창 닫는 기능 */
+  useEffect(() => {
+    const closeModalwithEsc = (e) => {
+      if (e.key === 'Escape') {
+        modalOption.onClose();
+      }
+    };
+    window.addEventListener('keydown', closeModalwithEsc);
+    return () => window.removeEventListener('keydown', closeModalwithEsc);
+  }, [modalOption]);
+
+
   return (
     modalOption.isModalShow && (
       <div className="modal-container">
