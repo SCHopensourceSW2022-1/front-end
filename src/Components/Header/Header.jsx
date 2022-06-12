@@ -9,7 +9,7 @@ function Header(props) {
   const { Menu } = props;
   return (
     <div className="header">
-      <Link to="/" className="header-logo">Logo</Link>
+      <Link to="/" className="header-logo">너동나동</Link>
       <div className="search-bar">
         <input
           className="search-input"
