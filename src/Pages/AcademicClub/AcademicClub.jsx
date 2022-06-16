@@ -82,12 +82,11 @@ const RenderAcademicContents = () => {
 
   return (
     <Grid container spacing={2} className="contents-grid">
+      <ModalForm ContentData={academicClubData} modalOption={modalOption} />
       {academicClubData.map((item) => {
         return (
           <Grid item lg={3} key={item.id}>
-            <Card
-              onClick={openModal}
-            >
+            <Card onClick={openModal}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -105,10 +104,6 @@ const RenderAcademicContents = () => {
                 </CardContent>
               </CardActionArea>
             </Card>
-            <ModalForm
-              ContentData={academicClubData}
-              modalOption={modalOption}
-            />
           </Grid>
         );
       })}

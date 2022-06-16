@@ -97,6 +97,7 @@ const RenderCenterContents = () => {
 
   return (
     <Grid container spacing={2} className="contents-grid">
+      <ModalForm ContentData={centerClubData} modalOption={modalOption} />
       {centerClubData.map((item) => {
         return (
           <Grid item lg={3} key={item.id}>
@@ -118,7 +119,6 @@ const RenderCenterContents = () => {
                 </CardContent>
               </CardActionArea>
             </Card>
-            <ModalForm ContentData={centerClubData} modalOption={modalOption} />
           </Grid>
         );
       })}
