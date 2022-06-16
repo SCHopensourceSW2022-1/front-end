@@ -2,3 +2,9 @@
   width: 1000px !important;
   margin: auto !important;
 }
+.progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
