@@ -1,10 +1,39 @@
-import React, { useEffect } from 'react';
-// import CloseIcon from '@mui/icons-material/Close';
+import React, { useEffect, useState } from 'react';
+
+import { useMutation } from 'react-query';
+import axios from 'axios';
 
 import '../../Styles/ModalForm.css';
 
+import CircularProgress from '@mui/material/CircularProgress';
+
 function ModalForm(props) {
-  const { ContentData, modalOption } = props;
+  const { contentID, modalOption } = props;
+  const [content, setContent] = useState([]);
+  const [load, setLoad] = useState(false);
+
+  const getContentFromID = useMutation((id) => axios.get(`/read/${id}`), {
+    onSuccess: (data) => {
+      setContent(data.data);
+      setTimeout(() => {
+        setLoad(true);
+      }, 100);
+    },
+    onError: (error) => {
+      alert('에러가 발생했습니다!');
+    },
+  });
+
+  useEffect(() => {
+    getContentFromID
+      .mutateAsync(contentID)
+      .then(() => {})
+      .catch(() => {});
+  }, [contentID]);
+
+  useEffect(() => {
+    setLoad(false);
+  }, [modalOption.isModalShow]);
 
   /* ESC로 모달 창 닫는 기능 */
   useEffect(() => {
@@ -24,41 +53,37 @@ function ModalForm(props) {
           className="modal-background"
           onClick={() => modalOption.onClose()}
         ></div>
-        <div className="modal-contents">
-          <div className="club-title-box">
-            <div className="club-title">{ContentData[0].title}</div>
-          </div>
-          <div className="club-info-box">
-            <div className="club-img-box">
-              <img className="club-img" src={ContentData[0].img} alt="" />
+        {load ? (
+          <div className="modal-contents">
+            <div className="club-title-box">
+              <div className="club-title">{content.Name}</div>
             </div>
-            <div className="club-details">
-              <div className="detail-box">
-                <div className="club-detail-title-font">소개</div>
-                <div className="club-intro">{ContentData[0].intro}</div>
+            <div className="club-info-box">
+              <div className="club-img-box">
+                <img
+                  className="club-img"
+                  src={`data:image/png;base64,${content.img}`}
+                  alt=""
+                />
               </div>
-              <div className="detail-box">
-                <div className="club-detail-title-font">활동내용</div>
-                <div className="club-activity">{ContentData[0].activity}</div>
-              </div>
-              <div className="detail-box">
-                <div className="club-detail-title-font">지원방법</div>
-                <div className="club-method">{ContentData[0].method}</div>
-              </div>
-              <div className="detail-box">
-                <div className="club-detail-title-font">조건</div>
-                <div className="club-condition">{ContentData[0].condition}</div>
+              <div className="club-details">
+                <div className="detail-box">
+                  <div className="club-intro">{content.ContentsDetali}</div>
+                </div>
               </div>
             </div>
+            <button
+              className="modal-close-btn"
+              onClick={() => modalOption.onClose()}
+            >
+              닫기
+            </button>
           </div>
-          <div className="club-descript">{ContentData[0].description_add}</div>
-          <button
-            className="modal-close-btn"
-            onClick={() => modalOption.onClose()}
-          >
-            닫기
-          </button>
-        </div>
+        ) : (
+          <div className="progress">
+            <CircularProgress />
+          </div>
+        )}
       </div>
     )
   );
