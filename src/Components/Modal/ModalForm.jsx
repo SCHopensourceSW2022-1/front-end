@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 // import CloseIcon from '@mui/icons-material/Close';
 
 import '../../Styles/ModalForm.css';
@@ -16,7 +16,6 @@ function ModalForm(props) {
     window.addEventListener('keydown', closeModalwithEsc);
     return () => window.removeEventListener('keydown', closeModalwithEsc);
   }, [modalOption]);
-
 
   return (
     modalOption.isModalShow && (
